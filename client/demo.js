@@ -1,3 +1,5 @@
+
+
 Template.scene.onRendered(function (){
   SceneManager.init();
   addCube(SceneManager.scene);
@@ -6,11 +8,16 @@ Template.scene.onRendered(function (){
 });
 
 function addCube(scene){
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 10, 10, 10 ),
-             new THREE.MeshPhongMaterial({ color: 0x009900, specular: 0x00FF00, shininess: 50, shading: 0.5}) );
+  var backgroundSound,
+  mesh = new THREE.Mesh( new THREE.BoxGeometry( 10, 10, 10 ),
+         new THREE.MeshPhongMaterial({ color: 0x009900, specular: 0x00FF00, shininess: 50, shading: 0.5}) );
   scene.add(mesh);
   mesh.name = "box";
   mesh.position.z = -50;
+  backgroundSound = new THREE.Audio(SceneManager.listener);
+  backgroundSound.load('ambient.wav');
+  backgroundSound.autoplay = true;
+  scene.add(backgroundSound);
   Utils.registerFunction(rotate, mesh);
 }
 
