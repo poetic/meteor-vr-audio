@@ -1,4 +1,12 @@
-var am = new Howl({
-	urls: ['am.wav']
+sound = {};
+
+sound.ambient = new Howl({
+	urls: ['ambient.wav'],
+	loop: true
 });
-am.play();
+
+sound.ray = new Howl({
+	urls: ['ray.wav']
+});
+
+sound.ambient.play();
