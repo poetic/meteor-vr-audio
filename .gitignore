@@ -6,3 +6,4 @@
 ### Meteor ###
 .meteor/local
 .meteor/meteorite
+packages/* !README.md

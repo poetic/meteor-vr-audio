@@ -1,9 +1,9 @@
 Template.scene.onRendered(function (){
   SceneManager.init();
   addCube(SceneManager.scene);
-  addBackgroundSound(SceneManager.scene);
   Utils.animate( [SceneManager, Utils] );
   randomColor();
+  addBackgroundSound(SceneManager.scene);
 });
 
 function addCube(scene){
